@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "package_name"
+version = "0.0.1"
+authors = [
+    {name = "brittney hernandez", email = "author@example.com"},
+    ]
+descriptiom = "what is dis"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/pypa/package_name"
+Issues = "https://github.com/pypa/package_name/issues"
+
+[tool.setuptools]
+packages = ["package_folder"]
