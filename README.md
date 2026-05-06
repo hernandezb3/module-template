@@ -14,11 +14,11 @@ package-template/
 └── tests/
 ```
 
-## Add modules
+## ➕ Add modules
 Replace add.py and translate.py with any modules to include in your package. Ensure there is an empty file called \_\_init\_\_.py in the src/package_folder/ directory with your modules.
 
-## Customize pyproject.toml
-### Build backend
+## 📁 Customize pyproject.toml
+### 👾 Build backend
 The section specifying the build backend is [build-system] section of pyproject.toml. The pyproject.toml included in the template uses Setuptools for the package build backend.
 
 ```
@@ -29,7 +29,7 @@ build-backend = "setuptools.build_meta"
 
 If you want to use a different build backend, see the [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/).
 
-### Project info
+### ℹ️ Project info
 Edit the [project] section of pyproject.toml with information specific to your package.
 
 ```
@@ -51,10 +51,10 @@ license-files = ["LICEN[CS]E*"]
 - Replace this README.md with a README.md file for the project. For exmaple, see the pandas README.md for inspiration on what information to include: [https://github.com/pandas-dev/pandas](https://github.com/pandas-dev/pandas) 
 - By default this template uses the MIT license but be sure to review other licenses available: [https://choosealicense.com](https://choosealicense.com)
 
-## Rename package_folder
+## 📢 Rename package_folder
 Rename the directory package_folder/ to match the name you specified in pyproject.toml.
 
-## Upgrade packages
+## ❤️‍🩹 Upgrade packages
 Ensure the packages  you'll use to create and upload your package (i.e., pip, build, twine) are installed and upgraded. Run the following in Terminal,
 ```
 python3 -m pip install --upgrade pip
@@ -65,7 +65,7 @@ python3 -m pip install --upgrade build
 ```
 python3 -m pip install --upgrade twine
 ```
-## Generate distribution packages
+## 🧱 Generate distribution packages
 Now build from the directory where pyproject.toml is located. If you need to change your directory use cd
 
 ```
@@ -86,7 +86,7 @@ dist/
 └── package_name-version.tar.gz
 ```
 
-## Create an account with PyPI
+## ®️ Create an account with PyPI
 If you want to test a package upload, create an account with TestPyPI [https://test.pypi.org/account/register/](https://test.pypi.org/account/register/)
 
 If you are uploading to TestPyPI you'll need to generate an API token by navigating to manage > account > api tokens
@@ -95,7 +95,7 @@ If you are uploading to TestPyPI you'll need to generate an API token by navigat
 
 OR if you are ready to upload a real package to PyPI create an account [https://pypi.org/](https://pypi.org/)
 
-## Upload distribution archives
+## 💿 Upload distribution archives
 Now upload your package. Either to TestPyPI:
 
 ```
@@ -110,7 +110,7 @@ python3 -m twine upload dist/*
 ```
 Enter your credentials for your PyPI account. Once uploaded your package should be viewable on PyPI.
 
-## Test installation
+## 🧪 Test installation
 Test that your package installs correctly. To install from the TestPyPI registry use:
 
 ```
