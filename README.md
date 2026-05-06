@@ -19,7 +19,7 @@ Replace add.py and translate.py with any modules to include in your package. Ens
 
 ## Customize pyproject.toml
 ### Build backend
-The section specifying the build backend is [build-system] section of pyproject.toml. The pyproject.toml included in the template uses Setuptools for the package build backend:
+The section specifying the build backend is [build-system] section of pyproject.toml. The pyproject.toml included in the template uses Setuptools for the package build backend.
 
 ```
 [build-system]
@@ -30,7 +30,7 @@ build-backend = "setuptools.build_meta"
 If you want to use a different build backend, see the [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/).
 
 ### Project info
-Edit the [project] section of pyproject.toml with information specific to your package:
+Edit the [project] section of pyproject.toml with information specific to your package.
 
 ```
 [project]
@@ -55,7 +55,7 @@ license-files = ["LICEN[CS]E*"]
 Rename the directory package_folder/ to match the name you specified in pyproject.toml.
 
 ## Upgrade packages
-Ensure the packages  you'll use to create and upload your package (i.e., pip, build, twine) are installed and upgraded. Run the following in Terminal:
+Ensure the packages  you'll use to create and upload your package (i.e., pip, build, twine) are installed and upgraded. Run the following in Terminal,
 ```
 python3 -m pip install --upgrade pip
 ```
@@ -66,13 +66,18 @@ python3 -m pip install --upgrade build
 python3 -m pip install --upgrade twine
 ```
 ## Generate distribution packages
-Now run this command from the directory where pyproject.toml is located. Use cd to change your directory.
+Now build from the directory where pyproject.toml is located. If you need to change your directory use cd
+
 ```
 cd package-template
 ```
+
+And then build the package
+
 ```
 python3 -m build
 ```
+
 The build command should generate two files in the dist/ directory:
 
 ```
