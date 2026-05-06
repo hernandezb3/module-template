@@ -94,18 +94,15 @@ Ensure twine is up-to-date
 python3 -m pip install --upgrade twine
 ```
 
-And then upload your package
+And then upload your package to either the test repository:
 ```
 python3 -m twine upload --repository testpypi dist/*
 ```
-=== "test"
-    ``` test
-    python3 -m twine upload --repository testpypi dist/*
-    ```
-=== "PyPI"
-    ``` PyPI
-    python3 -m twine upload dist/*
-    ```
+
+OR the PyPI repository:
+```
+python3 -m twine upload dist/*
+```
 You will be prompted for an API token. Use the token value, including the pypi- prefix. Note that the input will be hidden, so be sure to paste correctly.
 
 Once uploaded, your package should be viewable on TestPyPI.
