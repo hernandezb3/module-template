@@ -99,11 +99,11 @@ And then upload your package
 python3 -m twine upload --repository testpypi dist/*
 ```
 === "test"
-    ```
+    ``` test
     python3 -m twine upload --repository testpypi dist/*
     ```
 === "PyPI"
-    ```
+    ``` PyPI
     python3 -m twine upload dist/*
     ```
 You will be prompted for an API token. Use the token value, including the pypi- prefix. Note that the input will be hidden, so be sure to paste correctly.
