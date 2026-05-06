@@ -8,7 +8,7 @@ version = "0.0.1"
 authors = [
     {name = "brittney hernandez", email = "author@example.com"},
     ]
-descriptiom = "what is dis"
+descriptiom = "what is the package for?"
 readme = "README.md"
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
