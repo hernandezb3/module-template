@@ -1,8 +1,8 @@
-# Template for Creating Python Modules
+# Template for Creating Python Packages
 
 This repo is a template with the folder structure below to follow along with the [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/). To get started select Use this template and Create a new repository.
 ```
-module-template/
+package-template/
 ├── LICENSE
 ├── pyproject.toml
 ├── README.md
@@ -14,19 +14,12 @@ module-template/
 └── tests/
 ```
 
-## Ensure pip is upgraded
-```
-python3 -m pip install --upgrade pip
-```
-
-## Add own modules
-Replace add.py and translate.py with any modules to include in your package.
-
-Ensure there is an empty file called __init__.py in the src folder with your modules.
+## Add modules
+Replace add.py and translate.py with any modules to include in your package. Ensure there is an empty file called __init__.py in the src/package_folder/ directory with your modules.
 
 ## Customize pyproject.toml
 ### Build backend
-The file pyproject.toml included here uses Setuptools for the package build backend. The section specifying the build backend is:
+The file pyproject.toml included here uses Setuptools for the package build backend. The section specifying the build backend is [build-system] section of pyproject.toml:
 
 ```
 [build-system]
@@ -34,8 +27,8 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 ```
 
-### Customize project info
-Edit the project information in pyproject.toml:
+### Project info
+Edit the [project] section of pyproject.toml with information specific to your package:
 
 ```
 [project]
@@ -56,23 +49,29 @@ license-files = ["LICEN[CS]E*"]
 - Replace this README.md with a README.md file for the project. For exmaple, see the pandas README.md to see what information might be helpful to include: [https://github.com/pandas-dev/pandas](https://github.com/pandas-dev/pandas) 
 - By default this template uses the MIT license but be sure to review other licenses available: [https://choosealicense.com](https://choosealicense.com)
 
-## Name package_folder
-Rename the directory package_folder to match the name of your package. Ideally this also matches the name of the repository.
+## Rename package_folder
+Rename the directory package_folder/ to match the name you specified in pyproject.toml.
 
-
-## Generate distribution packages
-Upgrade build
+## Upgrade packages
+Ensure the packages  you'll use to create and upload your package (i.e., pip, build, twine) are installed and upgraded. Run the following in Terminal:
+```
+python3 -m pip install --upgrade pip
+```
 ```
 python3 -m pip install --upgrade build
 ```
-
-Now run this command from the same directory where pyproject.toml is located:
-
+```
+python3 -m pip install --upgrade twine
+```
+## Generate distribution packages
+Now run this command from the directory where pyproject.toml is located. Use cd to change your directory.
+```
+cd package-template
+```
 ```
 python3 -m build
 ```
-
-The command should generate two files in the dist directory:
+The build command should generate two files in the dist/ directory:
 
 ```
 dist/
@@ -81,7 +80,7 @@ dist/
 ```
 
 ## Create an account with PyPI
-To register with TestPyPI repository which is for testing package uploads use [https://test.pypi.org/account/register/](https://test.pypi.org/account/register/)
+To test a package upload, use the TestPyPI repository [https://test.pypi.org/account/register/](https://test.pypi.org/account/register/)
 
 If you are uploading to TestPyPI you'll need to generate an API token by navigating to manage > account > api tokens
 - Set “Scope” to “Entire account”
@@ -90,22 +89,39 @@ If you are uploading to TestPyPI you'll need to generate an API token by navigat
 OR if you are ready to upload a real package to PyPI register with [https://pypi.org/](https://pypi.org/)
 
 ## Upload distribution archives
-Now upload your package to Python Package Index
+Now upload your package either the test repository:
 
-Ensure twine is up-to-date
-```
-python3 -m pip install --upgrade twine
-```
-
-And then upload your package to either the test repository:
 ```
 python3 -m twine upload --repository testpypi dist/*
 ```
+You will be prompted for an API token. Use the token value, including the pypi- prefix. Note that the input will be hidden, so be sure to paste correctly. Once uploaded, your package should be viewable on TestPyPI.
 
-OR the PyPI repository:
+OR to the PyPI repository:
+
 ```
 python3 -m twine upload dist/*
 ```
-You will be prompted for an API token. Use the token value, including the pypi- prefix. Note that the input will be hidden, so be sure to paste correctly.
+Enter your credentials for your PyPI account. Once uploaded your package should be viewable on PyPI.
 
-Once uploaded, your package should be viewable on TestPyPI.
+## Test installation
+Test that your package installs correctly. To install from the TestPyPI registry use:
+
+```
+python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps package_name
+```
+
+OR install from PyPI:
+```
+python3 -m pip install package_name
+```
+
+And then load the package into a python script using:
+```
+import package_name
+```
+
+You can also read in specific modules -- e.g., add.py or translate.py from the src/package_folder/ directory -- using:
+```
+from package_name import add
+```
+
