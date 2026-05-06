@@ -56,6 +56,9 @@ license-files = ["LICEN[CS]E*"]
 - Replace this README.md with a README.md file for the project. For exmaple, see the pandas README.md to see what information might be helpful to include: [https://github.com/pandas-dev/pandas](https://github.com/pandas-dev/pandas) 
 - By default this template uses the MIT license but be sure to review other licenses available: [https://choosealicense.com](https://choosealicense.com)
 
+### Name package_folder
+Rename the directory package_folder to match the name of your package. Ideally this also matches the name of the repository.
+
 
 ### Generate distribution packages
 Upgrade build
