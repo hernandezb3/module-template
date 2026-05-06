@@ -48,7 +48,7 @@ license-files = ["LICEN[CS]E*"]
 - Determine your starting version. See [https://semver.org](https://semver.org) for more information about semantic versioning
 - Add your name and email in the authors section
 - Describe the package to help others on PyPI know what the package is for
-- Replace this README.md with a README.md file for the project. For exmaple, see the pandas README.md to see what information might be helpful to include: [https://github.com/pandas-dev/pandas](https://github.com/pandas-dev/pandas) 
+- Replace this README.md with a README.md file for the project. For exmaple, see the pandas README.md for inspiration on what information to include: [https://github.com/pandas-dev/pandas](https://github.com/pandas-dev/pandas) 
 - By default this template uses the MIT license but be sure to review other licenses available: [https://choosealicense.com](https://choosealicense.com)
 
 ## Rename package_folder
@@ -82,23 +82,23 @@ dist/
 ```
 
 ## Create an account with PyPI
-To test a package upload, use the TestPyPI repository [https://test.pypi.org/account/register/](https://test.pypi.org/account/register/)
+If you want to test a package upload, create an account with TestPyPI [https://test.pypi.org/account/register/](https://test.pypi.org/account/register/)
 
 If you are uploading to TestPyPI you'll need to generate an API token by navigating to manage > account > api tokens
 - Set “Scope” to “Entire account”
 - Copy and save the token
 
-OR if you are ready to upload a real package to PyPI register with [https://pypi.org/](https://pypi.org/)
+OR if you are ready to upload a real package to PyPI create an account [https://pypi.org/](https://pypi.org/)
 
 ## Upload distribution archives
-Now upload your package either the test repository:
+Now upload your package. Either to TestPyPI:
 
 ```
 python3 -m twine upload --repository testpypi dist/*
 ```
 You will be prompted for an API token. Use the token value, including the pypi- prefix. Note that the input will be hidden, so be sure to paste correctly. Once uploaded, your package should be viewable on TestPyPI.
 
-OR to the PyPI repository:
+OR to PyPI:
 
 ```
 python3 -m twine upload dist/*
