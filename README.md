@@ -15,7 +15,7 @@ package-template/
 ```
 
 ## Add modules
-Replace add.py and translate.py with any modules to include in your package. Ensure there is an empty file called __init__.py in the src/package_folder/ directory with your modules.
+Replace add.py and translate.py with any modules to include in your package. Ensure there is an empty file called \_\_init\_\_.py in the src/package_folder/ directory with your modules.
 
 ## Customize pyproject.toml
 ### Build backend
