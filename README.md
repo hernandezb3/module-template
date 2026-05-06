@@ -1,6 +1,6 @@
 # Template for Creating Python Modules
 
-This repo is a template with the folder structure below to follow along with the [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/). To get started 
+This repo is a template with the folder structure below to follow along with the [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/). To get started select Use this template and Create a new repository.
 ```
 module-template/
 ├── LICENSE
@@ -57,6 +57,56 @@ license-files = ["LICEN[CS]E*"]
 - By default this template uses the MIT license but be sure to review other licenses available: [https://choosealicense.com](https://choosealicense.com)
 
 
+### Generate distribution packages
+Upgrade build
+```
+python3 -m pip install --upgrade build
+```
 
+Now run this command from the same directory where pyproject.toml is located:
 
+```
+python3 -m build
+```
 
+The command should generate two files in the dist directory:
+
+```
+dist/
+├── package_name-version-py3-none-any.whl
+└── package_name-version.tar.gz
+```
+
+### Create an account with PyPI
+To register with TestPyPI repository which is for testing package uploads use [https://test.pypi.org/account/register/](https://test.pypi.org/account/register/)
+
+If you are uploading to TestPyPI you'll need to generate an API token by navigating to manage > account > api tokens
+- Set “Scope” to “Entire account”
+- Copy and save the token
+
+OR if you are ready to upload a real package to PyPI register with [https://pypi.org/](https://pypi.org/)
+
+### Upload distribution archives
+Now upload your package to Python Package Index
+
+Ensure twine is up-to-date
+```
+python3 -m pip install --upgrade twine
+```
+
+And then upload your package
+```
+python3 -m twine upload --repository testpypi dist/*
+```
+
+```javascript I'm A tab
+console.log('test');
+python3 -m twine upload --repository testpypi dist/*
+```
+```javascript I'm tab B
+console.log('PyPI');
+python3 -m twine upload dist/*
+```
+You will be prompted for an API token. Use the token value, including the pypi- prefix. Note that the input will be hidden, so be sure to paste correctly.
+
+Once uploaded, your package should be viewable on TestPyPI.
