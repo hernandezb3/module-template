@@ -19,13 +19,15 @@ Replace add.py and translate.py with any modules to include in your package. Ens
 
 ## Customize pyproject.toml
 ### Build backend
-The file pyproject.toml included here uses Setuptools for the package build backend. The section specifying the build backend is [build-system] section of pyproject.toml:
+The section specifying the build backend is [build-system] section of pyproject.toml. The pyproject.toml included in the template uses Setuptools for the package build backend:
 
 ```
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 ```
+
+If you want to use a different build backend, see the [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/).
 
 ### Project info
 Edit the [project] section of pyproject.toml with information specific to your package:
