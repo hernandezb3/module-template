@@ -98,15 +98,14 @@ And then upload your package
 ```
 python3 -m twine upload --repository testpypi dist/*
 ```
-
-```javascript I'm A tab
-console.log('test');
-python3 -m twine upload --repository testpypi dist/*
-```
-```javascript I'm tab B
-console.log('PyPI');
-python3 -m twine upload dist/*
-```
+=== "test"
+    ```
+    python3 -m twine upload --repository testpypi dist/*
+    ```
+=== "PyPI"
+    ```
+    python3 -m twine upload dist/*
+    ```
 You will be prompted for an API token. Use the token value, including the pypi- prefix. Note that the input will be hidden, so be sure to paste correctly.
 
 Once uploaded, your package should be viewable on TestPyPI.
